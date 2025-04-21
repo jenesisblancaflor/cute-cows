@@ -1,0 +1,250 @@
+/* BASE STYLES */
+body {
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #c0ccc2;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+.topbar {
+  background-color: rgba(175, 204, 180, 0.8);
+  border: 2px solid #faf7ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+h1 {
+  color: #faf7ed;
+  font-size: 4vh;
+  font-weight: 700;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar a {
+  color: #faf7ed;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #333;
+  background-color: #faf7ed;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+/* TITLES */
+.title {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  color: #faf7ed;
+  font-size: 5vh;
+  text-align: center;
+}
+
+/* COW GRID */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 160px 40px 40px 40px;
+}
+
+/* INDIVIDUAL COW ITEM */
+.cow-item {
+  background-color: #faf7ed;
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cow-item:hover {
+  transform: scale(1.05);
+}
+
+.cow-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.cow-item h3 {
+  margin: 10px 0 0;
+  color: #000;
+}
+
+/* COW DETAILS SECTION */
+.json-display {
+  margin: 40px auto;
+  max-width: 90%;
+  background-color: #faf7ed;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cow-details {
+  margin-bottom: 60px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #faf7ed;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+.cow-detail-image {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cow-details .flex-container > div:last-child {
+  flex: 1;
+}
+
+/* COW CONTENT SECTION */
+.section {
+  background-color: #faf7ed;
+  border-top: 2px solid #c0ccc2;
+  border-bottom: 2px solid #c0ccc2;
+  border-radius: 30%;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.section .title {
+  font-size: 3vh;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+/* CAROUSEL (GLIDE) */
+.glide.fullWidth {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.glide__slide {
+  display: flex;
+  justify-content: center;
+}
+
+.glide__slide img {
+  width: 100%;
+  max-width: 400px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.glide__slide img:hover {
+  transform: scale(1.03);
+}
+
+.glide__arrows {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  padding: 0 40px;
+  pointer-events: none;
+}
+
+.glide__arrow {
+  pointer-events: all;
+  font-weight: bold;
+  background-color: #c0ccc2;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.glide__arrow:hover {
+  background-color: #abb8ad;
+}
+
+.glide__bullets {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  display: inline-flex;
+  transform: translateX(-50%);
+  list-style: none;
+}
+
+.glide__bullet {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.glide__bullet--active,
+.glide__bullet:hover {
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cow-detail-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .glide__slide img {
+    height: 400px;
+  }
+
+  .glide__arrow {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
